@@ -1,5 +1,4 @@
-// used to make events that occur
-// at separate times share a theme
+// Used for making events share a title and color scheme
 export interface EventGroup {
 	id: string;
 	title: string;
@@ -7,10 +6,12 @@ export interface EventGroup {
 	events: ScheduleEvent[];
 }
 
+export type Weekday = "sunday" | "monday" | "tuesday" | "wednesday" | "thursday" | "friday" | "saturday";
+
 export interface ScheduleEvent {
 	id: string;
 	title: string;
-	days: number[];
+	days: Weekday[];
 
 	startTime: string;
 	endTime: string;
@@ -21,14 +22,9 @@ export interface ScheduleEvent {
 }
 
 export interface ScheduleSettings {
-	// 0 = Sunday -> 6 = Saturday
-	weekStartsOn: number;
-
-	// what days are shown in the schedule
-	visibleDays: number[];
-
-	// what days are weekends
-	weekendDays: number[];
+	weekStartsOn: Weekday;
+	visibleDays: Weekday[];
+	weekendDays: Weekday[];
 
 	startTime: string;
 	endTime: string;
@@ -42,3 +38,4 @@ export interface Schedule {
 	settings: ScheduleSettings;
 	eventGroups: EventGroup[];
 }
+
