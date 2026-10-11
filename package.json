@@ -1,0 +1,21 @@
+{
+  "name": "yotei-maker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github-personal:HHujaeer/Yotei-Maker.git"
+  },
+  "keywords": [],
+  "type": "commonjs",
+  "devDependencies": {
+    "typescript": "~6.0.3",
+    "vite": "^8.3.4"
+  }
+}
