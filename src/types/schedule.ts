@@ -10,7 +10,8 @@ export type Weekday = "sunday" | "monday" | "tuesday" | "wednesday" | "thursday"
 
 export interface ScheduleEvent {
 	id: string;
-	title: string;
+	// uses group title if unnamed
+	title?: string;
 	days: Weekday[];
 
 	startTime: string;

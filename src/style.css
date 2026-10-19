@@ -18,3 +18,72 @@ body {
     margin: 0 auto;
     padding: 2rem;
 }
+
+.timetable {
+    --hour-height: 60px;
+    display: grid;
+    grid-template-columns: 4.5rem repeat(var(--day-count), 1fr);
+    border: 1px solid #cccccc;
+    background: white;
+}
+
+.day-header {
+    padding: 0.5rem;
+    text-align: center;
+    font-weight: bold;
+    border-left: 1px solid #dddddd;
+    border-bottom: 1px solid #cccccc;
+}
+
+.corner {
+    border-bottom: 1px solid #cccccc;
+}
+
+.time-col,
+.day-body {
+    position: relative;
+    height: calc(var(--hour-count) * var(--hour-height));
+}
+
+.time-label {
+    position: absolute;
+    right: 0.5rem;
+    transform: translateY(-50%);
+    font-size: 0.75rem;
+    color: #666666;
+}
+
+.day-body {
+    border-left: 1px solid #dddddd;
+    /* one horizontal line per hour */
+    background-image: repeating-linear-gradient(
+        to bottom,
+        #eeeeee 0,
+        #eeeeee 1px,
+        transparent 1px,
+        transparent var(--hour-height)
+    );
+}
+
+.event {
+    position: absolute;
+    left: 2px;
+    right: 2px;
+    padding: 0.25rem 0.4rem;
+    border-radius: 4px;
+    color: white;
+    font-size: 0.8rem;
+    overflow: hidden;
+}
+
+.event-title {
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.event-time {
+    font-size: 0.7rem;
+    opacity: 0.9;
+}
